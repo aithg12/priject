@@ -510,18 +510,6 @@ if (eval("q" + i) == "O"){
 } 
 
 
-var loop6 = 9 
-for( var i = 1; i<= loop6 ; i++ ){
-
-if(eval('q' + i) == ''){
-
-
-alert('you miss quastion' + i)
-return false;
-}
-
-
-}
 
 
 
@@ -575,6 +563,38 @@ function goback(){
 
 }
 
+function testing(){
+
+var q1 = document.forms["form"]["recommed"].value
+var q2 = document.forms["form"]["recommed1"].value
+var q3 = document.forms["form"]["recommed2"].value
+var q4 = document.forms["form"]["recommed3"].value
+var q5 = document.forms["form"]["recommed4"].value
+var q6 = document.forms["form"]["recommed5"].value
+var q7 = document.forms["form"]["recommed6"].value
+var q8 = document.forms["form"]["recommed7"].value
+var q9 = document.forms["form"]["recommed8"].value
+
+
+
+
+
+
+
+	var loop6 = 9 
+for( var i = 1; i<= loop6 ; i++ ){
+
+if(eval('q' + i) == ''){
+
+
+alert('you miss quastion' + i)
+return false;
+}
+
+
+}
+}	
+	
 </script>
 
 
