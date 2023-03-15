@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+
+
+
+<style>
+
+*{
+
+    margin: 0;
+    padding: 0;
+
+
+}
+.main{
+width: 130px ;
+
+margin: 40px auto;
+
+
+}
+#tab,#tab2 {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+}
+input{
+border: none;
+width: 90%;
+outline: none;
+text-align: center;
+padding: 6px;
+font-size: large;
+
+   
+}
+td{
+
+    width: 50%;
+    text-align: center;
+
+}
+
+#but{
+
+    background-color:rgba(0, 128, 0, 0.822);
+width: 100%;
+padding: 4px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button:hover{
+
+background-color:rgba(0, 128, 0, 0.733);
+letter-spacing: 0.5px;
+
+}
+
+#remove{
+    float: right;
+    background-color:rgba(0, 128, 0, 0.822);
+width: 45%;
+padding: 4px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+
+}
+#add{
+
+    background-color:rgba(0, 128, 0, 0.822);
+width: 45%;
+padding: 4px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+
+
+th{
+
+    padding: 6px;
+}
+#field{
+
+padding: 10px;
+text-align: left;
+font-size: large;
+
+}
+#field::before{
+    content: 'average:';
+    
+}
+
+.hide{
+
+    display: none;
+}
+
+#head{
+
+    text-align: center;
+    margin: 15px auto;
+
+}
+
+#line{
+    margin: auto 500px;
+    
+}
+#clear{
+
+    background-color:rgba(0, 128, 0, 0.822);
+width: 100%;
+padding: 4px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+margin: 2px auto;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+    
+    <h1 id="head">حاسبة حساب المعدل</h1><hr id="line">
+    
+    <div  class="main">
+        <table border="1" id="tab">
+
+           <tr><th>الدرجات</th></tr>
+           <tr ><td ><input type="number" name="input" id="g1" ></tr>
+           <tr ><td ><input type="number" name="input" id="g2" ></tr>
+           <tr ><td ><input type="number" name="input" id="g3" ></tr>
+           <tr ><td ><input type="number" name="input" id="g4" ></tr>
+           <tr ><td ><input type="number" name="input" id="g5" ></tr>
+           <tr ><td ><input type="number" name="input" id="g6" ></tr>
+           <tr class="hide" id="tr1"><td><input type="number" name="input" id="g7"  ></tr>
+            <tr class="hide" id="tr2"><td><input type="number" name="input" id="g8"  ></tr>
+            <tr class="hide" id="tr3"><td><input type="number" name="input" id="g9"  ></tr>
+            <tr class="hide" id="tr4"><td><input type="number" name="input" id="g10"  ></tr>
+            <tr class="hide" id="tr5"><td><input type="number" name="input" id="g11"  ></tr>
+            <tr class="hide" id="tr6"><td><input type="number" name="input" id="g12"  ></tr>
+            
+            <button id="add" onclick="add()">add</button>
+
+            <button id="remove" onclick="remove()">remove</button>
+            <button id="clear" onclick="clear()">clear</button>
+
+          <table id="tab2" border="1">
+          
+            <tr><th id="field" > </th></tr>
+        </table>
+        
+
+            
+            
+            
+
+
+
+     
+        </table>
+        
+        <button onclick="pro()" id="but">sumbit</button>
+
+
+    </div>
+
+
+
+
+<script>
+
+ var hid1 = document.getElementById('g1')
+ var hid2 = document.getElementById('g2')
+ var hid3 = document.getElementById('g3')
+ var hid4 = document.getElementById('g4')
+ var hid5 = document.getElementById('g5')
+ var hid6 = document.getElementById('g6')
+ var hid7 = document.getElementById('g7')
+ var hid8 = document.getElementById('g8')
+ var hid9 = document.getElementById('g9')
+var hid10 = document.getElementById('g10')
+var hid11 = document.getElementById('g11')
+var hid12 = document.getElementById('g12')
+
+
+
+var loop =6
+var h2 = 0
+var h = 0
+var h2 = 0
+
+function remove(){
+    if(loop == 6){
+
+return false
+
+    }
+    loop--
+    
+    if(h == 0){
+
+        return false;
+    }
+    
+    h2=h
+h--
+
+
+var hide1 = document.getElementById('tr1')
+var hide2 = document.getElementById('tr2')
+var hide3 = document.getElementById('tr3')
+var hide4 = document.getElementById('tr4')
+var hide5 = document.getElementById('tr5')
+var hide6 = document.getElementById('tr6')
+
+
+
+
+eval("hide" + h2).classList.add('hide')
+
+
+}
+
+
+function add(){
+
+if(loop == 12){
+    return false;
+}
+loop++
+
+if(h == 6){
+    return false;
+}
+
+    h++
+var hide1 = document.getElementById('tr1')
+var hide2 = document.getElementById('tr2')
+var hide3 = document.getElementById('tr3')
+var hide4 = document.getElementById('tr4')
+var hide5 = document.getElementById('tr5')
+var hide6 = document.getElementById('tr6')
+
+
+
+   eval("hide" + h).classList.remove('hide')
+    
+
+
+
+
+}
+
+
+
+function pro(){
+
+    var array2 = []
+    var array3 = []
+
+
+var field =document.getElementById('field')
+    var sum = 0
+for(var i = 1 ;i<=loop; i++ ){
+
+if(eval("hid" + i).value == '' ){
+
+    array3.push(eval("hid" + i).value)
+
+}
+if(array3.length == 5){
+
+return false;
+
+}
+
+
+if(eval("hid" + i).value > 100){
+
+    alert("the number has to be 100 or less")
+return false;
+
+
+}
+
+
+sum+=Number(eval("hid" + i).value)
+
+if(eval("hid" + i).value !== '' ){
+
+    array2.push(eval("hid" + i).value)
+
+}
+
+}
+
+sum = sum/array2.length
+sum = sum.toFixed(2)
+field.innerHTML = sum
+
+}
+
+
+
+
+var clear = document.getElementById("clear")
+clear.onclick =  function(){
+
+for(var i2 = 1 ;i2 <=loop; i2++  ){
+
+    eval("hid" + i2).value = ''
+
+
+
+}
+}
+
+
+
+
+
+
+
+</script>
+
+</body>
+
+
+</html>
