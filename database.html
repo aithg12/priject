@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+
+    <style>
+
+
+*{
+
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+
+width: 50%;
+margin: auto;
+    border: 2px solid black;
+    text-align: right
+}
+table{
+float: right;
+}
+.i{
+
+    width: 100%;
+
+    margin: 20px auto;
+}
+hr{
+
+    margin: 6px 10px;
+}
+#search{
+
+margin: 10px auto;
+border: none;
+
+}
+
+#sel,#sel2,#number {
+      width: 100%;
+      height: 30px;
+      margin: 4px;
+      border: none;
+      border-radius: 4px;
+      font-size: large;
+      padding: 4px;
+      outline: none;
+      color: black;
+      text-align: right;
+      
+
+    }
+
+ 
+    </style>
+</head>
+
+
+<body>
+    <div class="container" id="search">
+
+        <select id="sel" onchange="search()" style="border: 1px solid black ; width: 50%;">
+
+
+            <option value="الرابع الاعدادي">الرابع الاعدادي</option>
+            <option value="الخامس الاعدادي">الخامس الاعدادي</option>
+            <option value="السادس الاعدادي">السادس الاعدادي</option>
+    
+    
+          </select>
+
+          <select id="sel2" onchange="search()" style="border: 1px solid black ; width: 50%;" >
+
+
+            <option value="ا">ا</option>
+            <option value="ب">ب</option>
+            <option value="ج">ج</option>
+            <option value="د">د</option>
+            <option value="ه">ه</option>
+    
+    
+          </select><br>
+
+<input type="number" onkeyup="searchbynum(this.value)" id='number' placeholder="البحث بالرقم الامتحاني" style="border: 1px solid black ; width: 22%;" >
+
+    </div>
+    
+    
+    <div class="container" id="d">
+
+
+  
+
+    </div>
+
+    
+    
+    
+    <script>
+
+
+var clear = document.getElementById('clear')
+
+
+
+
+
+var res = JSON.parse(localStorage.requsts)
+ let table =''
+var cont = document.getElementById('d')
+
+
+
+
+
+console.log(res.length)
+for(var i = 0 ;i<res.length;i++ ){
+
+    
+
+//if(res[i].code == undefined){
+//res[i].code  = ''
+//} if(res[i].math == undefined){
+//
+//res[i].math = ''
+//
+//} if (res[i].biolgy == undefined){
+//
+//res[i].biolgy = ''
+//} if (res[i].reg == undefined){
+//
+//res[i].reg = ''
+//} if (res[i].english == undefined){
+//
+//res[i].english = ''
+//} if (res[i].cru == undefined){
+//
+//res[i].cru = ''
+//} if (res[i].arabic == undefined){
+//
+//res[i].arabic = ''
+//} if (res[i].biolgy == undefined){
+//
+//res[i].biolgy = ''
+//} if (res[i].earth == undefined){
+//
+//res[i].earth = ''
+//}
+//
+//
+
+
+ cont.innerHTML += `<h2 class="h${i}">الاسم: ${res[i].name} </h2><h2 class="h${i}">الرقم الامتحاني: ${res[i].num} </h2>
+       
+<h2 class="h${i}">الصف: ${res[i].sel}</h2>
+
+       <table border="1" class="i" class='h${i}'>
+       
+       
+           <tr id='h${i}' >
+           <th >الرمز</th>
+       
+             <th >الرياضيات</th>
+             <th >الاحياء</th>
+             <th >الاسلامية</th>
+             <th >الانكليزي</th>
+             <th >العربي</th>
+             <th >الكردي</th>
+             <th >علم الارض</th>
+             <th >المادة</th>
+       
+             
+             
+             
+       
+           </tr>
+       
+           <tr id='${i}'>
+       
+          
+       <td>${res[i].الرمز}</td>
+       <td>${res[i].الرياضيات}</td>
+       <td>${res[i].الاحياء}</td>
+       <td>${res[i].الاسلامية}</td>
+       <td>${res[i].الانكليزي}</td>
+       <td>${res[i].العربي}</td>
+       <td>${res[i].الكردي}</td>
+       <td>${res[i].الارض}</td>
+       <td>الدرجة</td>
+       
+       
+       
+           </tr>
+       
+       
+       
+         </table><hr>
+       
+       
+       `
+    
+        }
+   
+
+
+function search(){
+
+    var sel = document.getElementById('sel')
+var sel2 = document.getElementById('sel2')
+var number = document.getElementById('number')
+var sum = sel.value + '/'+ sel2.value
+
+
+
+if(number.value == ''){
+cont.innerHTML = ''
+    for(var i = 0; i< res.length; i++ ){
+
+if(res[i].sel == sum  ){
+
+
+cont.innerHTML += `<h2 class="h${i}">الاسم: ${res[i].name} </h2><h2 class="h${i}">الرقم الامتحاني: ${res[i].num} </h2>
+       
+       <h2 class="h${i}">الصف: ${res[i].sel}</h2>
+       
+              <table border="1" class="i" class='h${i}'>
+              
+              
+                  <tr id='h${i}' >
+                  <th >الرمز</th>
+              
+                    <th >الرياضيات</th>
+                    <th >الاحياء</th>
+                    <th >الاسلامية</th>
+                    <th >الانكليزي</th>
+                    <th >العربي</th>
+                    <th >الكردي</th>
+                    <th >علم الارض</th>
+                    <th >المادة</th>
+              
+                    
+                    
+                    
+              
+                  </tr>
+              
+                  <tr id='${i}'>
+              
+                 
+              <td>${res[i].الرمز}</td>
+              <td>${res[i].الرياضيات}</td>
+              <td>${res[i].الاحياء}</td>
+              <td>${res[i].الاسلامية}</td>
+              <td>${res[i].الانكليزي}</td>
+              <td>${res[i].العربي}</td>
+              <td>${res[i].الكردي}</td>
+              <td>${res[i].الارض}</td>
+              <td>الدرجة</td>
+              
+              
+              
+                  </tr>
+              
+              
+              
+                </table><hr>
+              
+              
+              
+              `
+
+}
+
+
+}
+
+}
+else{
+
+ 
+    return false
+}
+}
+ function searchbynum(value){
+    cont.innerHTML = ''
+
+    
+    for(var i = 0; i< res.length; i++ ){
+    if(res[i].num == Number(value)  ){
+
+cont.innerHTML += `<h2 class="h${i}">الاسم: ${res[i].name} </h2><h2 class="h${i}">الرقم الامتحاني: ${res[i].num} </h2>
+       
+       <h2 class="h${i}">الصف: ${res[i].sel}</h2>
+       
+              <table border="1" class="i" class='h${i}'>
+              
+              
+                  <tr id='h${i}' >
+                  <th >الرمز</th>
+              
+                    <th >الرياضيات</th>
+                    <th >الاحياء</th>
+                    <th >الاسلامية</th>
+                    <th >الانكليزي</th>
+                    <th >العربي</th>
+                    <th >الكردي</th>
+                    <th >علم الارض</th>
+                    <th >المادة</th>
+              
+                    
+                    
+                    
+              
+                  </tr>
+              
+                  <tr id='${i}'>
+              
+                 
+              <td>${res[i].الرمز}</td>
+              <td>${res[i].الرياضيات}</td>
+              <td>${res[i].الاحياء}</td>
+              <td>${res[i].الاسلامية}</td>
+              <td>${res[i].الانكليزي}</td>
+              <td>${res[i].العربي}</td>
+              <td>${res[i].الكردي}</td>
+              <td>${res[i].الارض}</td>
+              <td>الدرجة</td>
+              
+              
+              
+                  </tr>
+              
+              
+              
+                </table><hr>
+              
+              
+              
+              `
+
+}
+
+}
+
+ }
+        
+    </script>
+</body>
+
+
+
+
+</html>
