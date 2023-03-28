@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Calculator</title>
+<style>
+
+*{
+
+  margin: 0;
+  padding: 0;
+  
+
+}
+
+
+
+body{
+  background-color: #222;
+}
+
+.crud{
+width: 50%;
+  margin: auto;
+  border: 2px ,solid black;
+  text-transform: uppercase;
+  font-family: system-ui;
+}
+
+.head{
+
+  text-align: center;
+  font-size: larger;
+
+}
+
+input{
+width: 100%;
+background-color: #111;
+height: 30px;
+margin: 4px;
+border: none;
+border-radius: 4px ;
+font-size: large;
+padding: 4px;
+outline: none;
+color: white;
+
+}
+input:focus{
+
+  background-color: black;
+transform: scale(1.1);
+
+}
+#f{
+
+width: 20%;
+
+}
+#total{
+
+background-color: rgba(255, 0, 0, 0.671);
+width: 10px;
+height: 10px;
+font-size: larger;
+border: none;
+border-radius: 4px;
+padding: 4px;
+
+
+}
+#total::before{
+
+  content: "total:";
+}
+button{
+  width: 100%;
+  cursor: pointer;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #390053;
+  
+}
+button:hover{
+
+background-color: purple;
+letter-spacing: 1px;
+
+}
+</style>
+
+</head>
+<body>
+    
+
+
+<div class="crud">
+
+
+  <div class="head">
+
+    <h1>crud</h1>
+    <h2> my project</h2>
+  </div>
+  
+  
+  
+
+
+
+
+
+    <div id="input"> 
+
+
+      <input type="text" id="pressed" placeholder="title" />
+
+        <input type="number" id="f">
+        <input type="number" id="f">
+        <input type="number" id="f">
+        <small id="total">
+          7575
+        </small>
+
+        <input type="number" id="pressed" placeholder="count" />
+        <input type="number" id="pressed" placeholder="catogory" />
+        <button >create</button>
+
+
+
+      </div>
+
+
+
+
+      
+
+
+
+
+    </div>
+
+
+
+  </div>
+  
+  
+  <div class="output">
+
+
+
+
+
+
+
+
+  </div>
+
+
+<script >
+ 
+
+</script>
+
+</body>
+</html>
